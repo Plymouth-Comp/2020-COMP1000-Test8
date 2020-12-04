@@ -38,7 +38,7 @@ namespace Exercise.Tests
         [InlineData("file/file1.txt", -2, 0, 0)]
         [InlineData("files/file01.txt", -1, 0, 0)]
         [InlineData("files/files1.map", -1, 1, 0)]
-        [InlineData("files/files2.map", 0, 2, 0)]
+        [InlineData("files/file2.map", 0, 2, 0)]
         public void Test3(string values, int result, int retries, int resets)
         {
             prog = new Program();
@@ -74,7 +74,7 @@ namespace Exercise.Tests
         [InlineData("file/file1.txt", -2, 0, 0)]
         [InlineData("files/file01.txt", -1, 0, 0)]
         [InlineData("files/files1.map", -1, 1, 0)]
-        [InlineData("files/files2.map", 0, 2, 0)]
+        [InlineData("files/files.map", 0, 2, 0)]
         public void Test4(string values, int result, int retries, int resets)
         {
             prog = new Program();
