@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 using XUnit.Project.Attributes;
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 
 namespace Exercise.Tests
 {
@@ -69,6 +70,13 @@ namespace Exercise.Tests
                 Assert.True(outcome == result, $"When trying to open a file  in persistent mode: Opening the file a 2nd time after closing the object once. You should have returned file state:{result} but did return {outcome}.");
 
             }
+            try
+            {
+                prog.PersistentFileClose(values);
+            }
+            catch (Exception) //this needed to be added to stop some files from remaining open after not disposing the stream correctly 
+            { }
+
         }
 
         [Theory, TestPriority(3)]
